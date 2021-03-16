@@ -1,4 +1,3 @@
-//const polybiusModule = require("../src/polybius");
 
 function polybiusRenderer() {
   const form = document.querySelector("#polybius");
@@ -22,5 +21,4 @@ function polybiusRenderer() {
     }
   });
 }
-console.log(polybiusModule);
 document.addEventListener("DOMContentLoaded", polybiusRenderer);
