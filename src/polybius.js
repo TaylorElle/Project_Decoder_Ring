@@ -2,14 +2,15 @@
 // as the index.html and test files rely on this setup to work properly.
 // Only add code (e.g., helper methods, variables, etc.) within the scope
 // of the anonymous function on line 6
-const alphabet = [
-  ["a", "b", "c", "d", "e"],
-  ["f", "g", "h", "i/j", "k"],
-  ["l", "m", "n", "o", "p"],
-  ["q", "r", "s", "t", "u"],
-  ["v", "w", "x", "y", "z"],
-];
+
 const polybiusModule = (function () {
+  const realAlphabet = [
+    ["a", "b", "c", "d", "e"],
+    ["f", "g", "h", "i/j", "k"],
+    ["l", "m", "n", "o", "p"],
+    ["q", "r", "s", "t", "u"],
+    ["v", "w", "x", "y", "z"],
+  ];
   function polybiusEncode(input) {
     const outputArr = [];
     const newInput = input.toLowerCase();
@@ -22,9 +23,9 @@ const polybiusModule = (function () {
         //HOW DO I GET IT TO MOVE ON TO THE NEXT I INDEX?  find method?
       }
       //loop through the alphabet array length (should be 5 in this example)
-      for (let j = 0; j < alphabet.length; j++) {
+      for (let j = 0; j < realAlphabet.length; j++) {
         //make variable for specific letter
-        const specificRow = alphabet[j];
+        const specificRow = realAlphabet[j];
         //loop through the array inside the alphabet array (should be 5 in this example)
         for (let k = 0; k < specificRow.length; k++) {
           //if the specific letter matches the input's specific letter (use includes instead of === so i and j can be found)
@@ -58,7 +59,7 @@ const polybiusModule = (function () {
 
         //make a variable that access the alphabet array at the index row and the index
         //let newRowLet = alphabet[input[i - 1]];
-        let newRowLocLet = alphabet[input[i + 1] - 1][input[i] - 1];
+        let newRowLocLet = realAlphabet[input[i + 1] - 1][input[i] - 1];
         //if the newLetter is an i/j
         if (newRowLocLet === "i/j") {
           // add both i/j in the output
@@ -99,5 +100,5 @@ const polybiusModule = (function () {
     polybius,
   };
 })();
-
+window.polybiusModule = polybiusModule;
 module.exports = polybiusModule.polybius;

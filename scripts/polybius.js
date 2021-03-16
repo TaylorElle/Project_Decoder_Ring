@@ -1,6 +1,8 @@
+//const polybiusModule = require("../src/polybius");
+
 function polybiusRenderer() {
   const form = document.querySelector("#polybius");
-  form.addEventListener("submit", event => {
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const input = event.target["polybius-input"].value;
@@ -20,5 +22,5 @@ function polybiusRenderer() {
     }
   });
 }
-
+console.log(polybiusModule);
 document.addEventListener("DOMContentLoaded", polybiusRenderer);
